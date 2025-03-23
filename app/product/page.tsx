@@ -6,19 +6,6 @@ const Product = () => {
     const [age, setAge] = React.useState('')
   const [phoneNumber, setPhoneNumber] = React.useState('')
 
-  const onInputChange = (e) => {
-    e.preventDefault()
-    setName(e.target.value)
-  }
-    const onAgeChange = (e) => {
-    e.preventDefault()
-    setAge(e.target.value)
-  }
-    const onPhoneNumber = (e) => {
-    e.preventDefault()
-    setPhoneNumber(e.target.value)
-  }
-
    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -49,7 +36,7 @@ const Product = () => {
 <form
 onSubmit={onSubmit}>
   <input
-  onChange={onInputChange}
+  onChange={(e)=>setName(e.target.value)}
   id='name'
   value={name}
   name='name'
@@ -58,7 +45,7 @@ onSubmit={onSubmit}>
   >
   </input>
    <input
-  onChange={onAgeChange}
+  onChange={(e)=>setAge(e.target.value)}
   id='age'
   value={age}
   name='age'
@@ -67,7 +54,7 @@ onSubmit={onSubmit}>
   >
   </input>
    <input
-  onChange={onPhoneNumber}
+  onChange={(e)=>setPhoneNumber(e.target.value)}
   id='phoneNumber'
   value={phoneNumber}
   name='phoneNumber'
